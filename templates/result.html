@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>Predicted Class: {{ result.predicted_class }}</p>
+    <p>Confidence: {{ result.confidence }}</p>
+
+    <h2>Uploaded Image</h2>
+    <img src="{{ url_for('static', filename=result.uploaded_image.split('static/')[-1]) }}" alt="Uploaded Image" width="300">
+
+    <h2>Algorithm Accuracy</h2>
+    <img src="{{ url_for('static', filename='accuracy_plot.png') }}" alt="Algorithm Accuracy Plot">
+
+    <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+</body>
+</html>
